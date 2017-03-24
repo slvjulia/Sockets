@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # adaptado de https://wiki.python.org/moin/TcpCommunication
 
