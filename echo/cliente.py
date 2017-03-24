@@ -10,10 +10,17 @@ TCP_PORT = 5005
 BUFFER_SIZE = 1024
 MESSAGE = "Ola, Mundo!"
 
+print ("[CLIENTE] Iniciando")
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print ("[CLIENTE] Conectando")
 s.connect((TCP_IP, TCP_PORT))
-s.send(MESSAGE.encode())
+print ("[CLIENTE] Enviando dados: \"" + MESSAGE + "\"")
+s.send(MESSAGE.encode('utf-8'))
+print ("[CLIENTE] Recebendo dados do servidor")
 data = s.recv(BUFFER_SIZE)
+print ("[CLIENTE] Dados recebidos em resposta do servidor: \"" + data.decode('utf-8') + "\"")
+print ("[CLIENTE] Fechando conexão com o servidor")
 s.close()
 
-print ("received data:", data)
+print ("[CLIENTE] Fim")
